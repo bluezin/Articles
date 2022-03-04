@@ -12,10 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ // = requiere actiontext
  */
 
 body {
-  background: radial-gradient(circle, hsl(236, 72%, 79%), hsl(237deg 41% 89%));
+  background: radial-gradient(circle, hsl(183deg 100% 92%), hsl(299deg 7% 80%));
   font-family: "Rubik", sans-serif;
 }
 
@@ -27,8 +28,6 @@ body {
 }
 
 .article-title {
-  color: white;
-  opacity: 0.6;
   text-transform: uppercase;
 }
 

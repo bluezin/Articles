@@ -1,0 +1,31 @@
+<div>
+  <div class="flex justify-between items-center">
+    <h1 class="text-center text-2xl mt-12 mb-10 font-bold">
+      Articles published in @dev
+    </h1>
+    <button class="bg-indigo-500 p-2 rounded text-white mt-2 text-sm">
+      <%= link_to "Create article", article_new_url, class: "p-2" %>
+    </button>
+  </div>
+  <section>
+    <div
+      class="sm:grid md:grid-cols-2 lg:grid-cols-3 justify-center align-center gap-12"
+    >
+      <% @article.each do |article| %>
+      <div class="shadow-2xl p-10 w-full relative mt-10 sm:m-auto">
+        <%= link_to article.title, articles_path(id: article.id), class: "block article-title
+        w-48 truncate m-auto text-center", style: "color: #{article.title_color}" %>
+        <div class="family-monospace mt-4">
+          <p>Creation date: <%= article.created_at %></p>
+          <p class="mt-2 pb-4">Update date: <%= article.updated_at %></p>
+        </div>
+        <button
+          class="bg-indigo-500 px-2.5 py-1 rounded text-white mt-2 text-sm absolute bottom-3"
+        >
+          <%= link_to "view", articles_path(id: article.id), class: "py-1" %>
+        </button>
+      </div>
+      <% end %>
+    </div>
+  </section>
+</div>

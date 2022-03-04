@@ -1,31 +1,38 @@
-<div class="xl:w-9/12 xl:m-auto">
+<div class="mt-10">
   <div class="flex justify-between items-center">
-    <h1 class="text-center text-2xl mt-12 text-white mb-10">
-      Articles published in @dev
+    <h1>
+      <%= tag.p @article.title, style: "color: #{@article.title_color}", class:
+      "text-2xl" %>
     </h1>
-    <button class="bg-blue-500 p-2 rounded text-white mt-2 text-sm">
-      <%= link_to "Create article", "/article/create", class: "" %>
+    <button class="bg-indigo-500 p-2 rounded text-white mt-2 text-sm">
+      <%= link_to "Regresar al home", "/", class: "p-2" %>
     </button>
   </div>
-  <section>
-    <div
-      class="sm:grid md:grid-cols-2 lg:grid-cols-3 justify-center align-center gap-12"
-    >
-      <% @article.each do |article| %>
-      <div class="shadow-2xl p-10 w-full relative mt-10 sm:m-auto">
-        <%= link_to article.title, "/article/:id", class: "block article-title
-        w-48 truncate m-auto" %>
-        <div class="family-monospace mt-4">
-          <p>Creation date: <%= article.created_at %></p>
-          <p class="mt-2 pb-4">Update date: <%= article.updated_at %></p>
-        </div>
-        <button
-          class="bg-blue-500 px-2.5 py-1 rounded text-white mt-2 text-sm absolute bottom-3"
-        >
-          <%= link_to "view", "/article/:id" %>
-        </button>
-      </div>
-      <% end %>
+
+  <div class="mt-10 bg-white p-4 rounded"><%= @article.content %></div>
+  <div class="mt-4">
+    <button class="bg-indigo-500 p-2 rounded text-white mt-2 text-sm">
+      <%= link_to "Edit article", "/article/#{@article.id}/edit", class: "p-2"
+      %>
+    </button>
+    <button class="bg-rose-400 p-2 rounded text-white mt-2 text-sm">
+      <%= link_to "Delete article", "/article/#{@article.id}", method: :delete,
+      class: "p-2" %>
+    </button>
+  </div>
+
+  <div class="mt-10 font-bold">
+    <h1 class="text-2xl">Comments about this article:</h1>
+    <div class="flex gap-6">
+      <input
+        class="w-full p-2 rounded relative top-4"
+        placeholder="write a comment ..."
+      />
+      <button
+        class="bg-indigo-500 rounded text-white text-sm px-4 relative top-4"
+      >
+        Send
+      </button>
     </div>
-  </section>
+  </div>
 </div>
