@@ -5,13 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&family=Rubik:wght@400&display=swap" rel="stylesheet">
+    <%= javascript_pack_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="w-9/12 m-auto">
       <%= yield %>
     </main>
   </body>

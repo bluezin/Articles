@@ -1,0 +1,26 @@
+<div class="mt-10">
+  <div class="flex justify-between items-center mb-12">
+    <h1 class="text-center text-2xl font-bold">New article</h1>
+    <button class="bg-indigo-500 p-2 rounded text-white mt-2 text-sm">
+      <%= link_to "Regresar al home", "/", class: "p-2" %>
+    </button>
+  </div>
+
+  <!-- helper of rails -->
+  <%= form_with local: true, method: :post, model: @article do |form| %>
+  <div class="mb-6">
+    <%= form.label :title, class: "mr-2 font-bold text-xl", :re %>
+    <!--  -->
+    <%= form.text_field :title, class: "w-full p-2" %>
+  </div>
+  <div class="mb-6 flex gap-4">
+    <%= form.label :title_color, class: "text-xl" %>
+    <div><%= form.color_field :title_color %></div>
+  </div>
+  <div>
+    <div class="bg-white p-4"><%= form.rich_text_area :content %></div>
+    <%= form.button "Create article", data: { confirm: "Are you sure?" }, class:
+    "w-full bg-indigo-500 text-white p-2 text-xl mt-12 rounded" %>
+  </div>
+  <% end %>
+</div>
