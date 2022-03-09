@@ -4,8 +4,8 @@
       Articles published in @dev
     </h1>
     <div>
-      <button class="bg-indigo-500 p-2 rounded text-white text-sm float-right">
-        <%= link_to "Create article", article_new_url, class: "p-2" %>
+      <button class="bg-indigo-500 p-2 rounded text-sm float-right">
+        <%= link_to "Create article", article_new_url, class: "p-2 no-underline text-white" %>
       </button>
     </div>
   </div>
@@ -16,7 +16,7 @@
       <% @article.each do |article| %>
       <div class="shadow-2xl p-10 w-full relative mt-10 sm:m-auto">
         <%= link_to article.title, articles_path(id: article.id), class: "block
-        article-title w-48 truncate m-auto text-center", style: "color:
+        article-title w-48 truncate m-auto text-center no-underline", style: "color:
         #{article.title_color}" %>
         <div class="family-monospace mt-4">
           <p>Creation date: <%= article.created_at %></p>
@@ -25,7 +25,7 @@
         <button
           class="bg-indigo-500 px-2.5 py-1 rounded text-white mt-2 text-sm absolute bottom-3"
         >
-          <%= link_to "view", articles_path(id: article.id), class: "py-1" %>
+          <%= link_to "view", articles_path(id: article.id), class: "py-1 no-underline text-white" %>
         </button>
       </div>
       <% end %>
