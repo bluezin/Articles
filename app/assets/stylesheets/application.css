@@ -16,7 +16,7 @@
  */
 
 body {
-  background: radial-gradient(circle, hsl(228deg 63% 77%), hsl(0deg 0% 98%));
+  background: radial-gradient(circle, hsl(228deg, 63%, 77%), hsl(0deg, 0%, 98%));
   font-family: "Rubik", sans-serif;
 }
 
