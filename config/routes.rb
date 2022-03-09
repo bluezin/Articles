@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "/articles", to: "articles#show"
 
   delete "/article/:id", to: "articles#destroy"
+
+  post "/article/:id/comments", to: "comments#create"
 end

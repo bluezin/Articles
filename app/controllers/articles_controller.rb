@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :find_articles, except: [:home, :new, :create]
+
   def home
     @article = Article.all
   end
@@ -14,23 +16,24 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
     article_params = params[:article]
     @article.update(title: article_params[:title], content: article_params[:content], title_color: article_params[:title_color])
     redirect_to "/"
   end
 
   def show
-    @article = Article.find(params[:id])
+    @comment = Comment.new
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to "/"
+  end
+
+  def find_articles
+    @article = Article.find(params[:id])
   end
 end
