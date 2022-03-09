@@ -16,15 +16,12 @@
  */
 
 body {
-  background: radial-gradient(circle, hsl(228deg, 63%, 77%), hsl(0deg, 0%, 98%));
+  background: radial-gradient(
+    circle,
+    hsl(228deg, 63%, 77%),
+    hsl(0deg, 0%, 98%)
+  );
   font-family: "Rubik", sans-serif;
-}
-
-:root {
-  --very-light-grayish-blue: hsl(240, 78%, 98%);
-  --light-grayish-blue: hsl(234, 14%, 74%);
-  --grayish-blue: hsl(233, 13%, 49%);
-  --dark-grayish-blue: hsl(232, 13%, 33%);
 }
 
 .article-title {
