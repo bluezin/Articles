@@ -1,0 +1,30 @@
+<div class="mt-10 font-bold">
+  <h1 class="text-2xl">Comments about this article:</h1>
+  <div class="gap-6 mt-6 justify-center">
+    <%= form_with local: true, url: "/article/#{@article.id}/comments", class:
+    "md:flex gap-6 mt-6 justify-center", model: @comment do |form| %>
+    <div>
+      <%= form.text_field :user_name, placeholder: "Name user ...", class: "p-2
+      md:m-auto mb-4 rounded w-full md:w-48" %>
+    </div>
+    <div>
+      <%= form.text_field :content, placeholder: "Write a comment ...", class:
+      "rounded relative p-2 w-full md:w-96 md:m-auto mb-4" %>
+    </div>
+    <%= form.button "Send", class: "bg-indigo-500 rounded text-white text-sm
+    md:py-0 py-2 px-4 relative" %> <% end %>
+  </div>
+
+  <div class="bg-white p-2 mt-10 rounded">
+    <% if @article.comments.empty? %>
+    <strong class="block text-center text-rose-400"
+      >This article has not comments</strong
+    >
+    <% end %> <% @article.comments.map do |comment| %>
+    <div class="flex gap-2 mt-4 ml-2 mb-4">
+      <strong class="text text-blue-500"><%= comment.user_name %> :</strong>
+      <p><%= comment.content %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
