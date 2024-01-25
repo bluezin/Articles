@@ -15,5 +15,6 @@
   },
   "scripts": {
     "build": "node esbuild.config.js"
-  }
+  },
+  "packageManager": "yarn@1.22.17"
 }
